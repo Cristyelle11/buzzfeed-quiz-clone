@@ -1,1 +1,20 @@
-<p>quiz works!</p>
+<div class="quiz-container">
+    <!-- Exibe a pergunta se ainda houver perguntas -->
+    <div *ngIf="currentQuestionIndex < questions.length">
+      <h2>{{ questions[currentQuestionIndex].question }}</h2>  <!-- Exibe a pergunta -->
+      <div *ngFor="let option of questions[currentQuestionIndex].options">
+        <button (click)="nextQuestion(option)">{{ option }}</button>  <!-- Exibe as opções de resposta -->
+      </div>
+    </div>
+  
+    
+    <div *ngIf="currentQuestionIndex === questions.length">
+      <h2>Resultado</h2>
+      <p>Você terminou o quiz! Suas respostas foram:</p>
+      <ul>
+        <li *ngFor="let answer of userAnswers">{{ answer }}</li>  <!-- Exibe as respostas do usuário -->
+      </ul>
+    </div>
+  </div>
+  
+  

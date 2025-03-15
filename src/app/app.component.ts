@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { QuizComponent } from './quiz/quiz.component'; 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  template: '<app-quiz></app-quiz>',  
+  standalone: true,  
+  imports: [QuizComponent],  
 })
 export class AppComponent {
-  title = 'buzzfeed-quiz-clone';
+  
 }
+
